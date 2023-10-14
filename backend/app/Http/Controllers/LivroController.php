@@ -1,0 +1,22 @@
+<?php
+
+namespace App\Http\Controllers;
+
+use Illuminate\Http\Request;
+use App\Models\Livro;
+
+class LivroController extends Controller
+{
+    public function store(Request $request){
+        $livro = new Livro();
+        $livro->titulo = $request->input('titulo');
+        $livro->autor = $request->input('autor');
+        $livro->classificacao = $request->input('classificacao');
+        $livro->resenha = $request->input('resenha');
+        $livro->data_adicao = now();
+
+        $livro->save();
+
+        return response()->json($livro, 201);
+    }
+}
