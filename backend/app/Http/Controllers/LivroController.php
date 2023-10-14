@@ -19,4 +19,9 @@ class LivroController extends Controller
 
         return response()->json($livro, 201);
     }
+
+    public function index(){
+        $livros = Livro::all();
+        return response()->json($livros, 200);
+    }
 }
