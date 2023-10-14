@@ -33,7 +33,7 @@ class LivroController extends Controller
         return response()->json($livro, 200);
     }
 
-    public function edit(Request $request, $id){
+    public function update(Request $request, $id){
         $livro = Livro::find($id);
         if(!$livro){
             return response()->json(['erro' => 'Livro não encontrado'], 404);
