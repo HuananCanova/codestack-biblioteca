@@ -46,4 +46,13 @@ class LivroController extends Controller
         $livro->save();
         return response()->json($livro, 200);
     }
+
+    public function delete($id){
+        $livro = Livro::find($id);
+        if(!$livro){
+            return response()->json(['erro' => 'Livro não encontrado'], 404);
+        }
+        $livro->delete();
+        return response()->json(['msg' => 'Livro deletado com sucesso'], 200);
+    }
 }
