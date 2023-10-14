@@ -32,4 +32,18 @@ class LivroController extends Controller
         }
         return response()->json($livro, 200);
     }
+
+    public function edit(Request $request, $id){
+        $livro = Livro::find($id);
+        if(!$livro){
+            return response()->json(['erro' => 'Livro não encontrado'], 404);
+        }
+        $livro->titulo = $request->input('titulo');
+        $livro->autor = $request->input('autor');
+        $livro->classificacao = $request->input('classificacao');
+        $livro->resenha = $request->input('resenha');
+        $livro->data_adicao = now();
+        $livro->save();
+        return response()->json($livro, 200);
+    }
 }
