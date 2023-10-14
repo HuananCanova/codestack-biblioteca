@@ -24,4 +24,12 @@ class LivroController extends Controller
         $livros = Livro::all();
         return response()->json($livros, 200);
     }
+
+    public function show($id){
+        $livro = Livro::find($id);
+        if(!$livro){
+            return response()->json(['erro' => 'Livro não encontrado'], 404);
+        }
+        return response()->json($livro, 200);
+    }
 }
