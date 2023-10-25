@@ -1,2 +1,2 @@
 <h2>Salve seu <span>livro</span> favorito </h2>
-<app-books-form [btnText]="btnText"></app-books-form>
+<app-books-form [btnText]="btnText" (onSubmit)="createHandler($event)"></app-books-form>

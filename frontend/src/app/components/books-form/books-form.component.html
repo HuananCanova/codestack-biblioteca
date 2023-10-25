@@ -1,29 +1,67 @@
-<form action="">
+<form (ngSubmit)="submit()" [formGroup]="booksForm" #formDir="ngForm">
+    <div class="form-group">
+      <input type="hidden" formControlName="id" />
+    </div>
+
     <div class="form-group">
       <label for="titulo">Título:</label>
-      <input type="text" id="titulo" name="titulo" placeholder="Insira um título" required>
-    </div>
+      <input
+        type="text"
+        formControlName="titulo"
+        placeholder="Coloque um titulo"
+        required
+      />
   
+      <div *ngIf="titulo.invalid && formDir.submitted" class="validation-error">
+        <p *ngIf="titulo.errors?.['required']">O título é obrigatório.</p>
+      </div>
+    </div>
+
+
+
     <div class="form-group">
       <label for="autor">Autor:</label>
-      <input type="text" id="autor" name="autor" placeholder="Insira um autor" required>
-    </div>
+      <input
+        type="text"
+        formControlName="autor"
+        placeholder="Coloque um autor"
+        required
+      />
   
+      <div *ngIf="autor.invalid && formDir.submitted" class="validation-error">
+        <p *ngIf="autor.errors?.['required']">O autor é obrigatório.</p>
+      </div>
+    </div>
+
     <div class="form-group">
       <label for="classificacao">Classificação:</label>
-      <select id="classificacao" name="classificacao" required>
+      <select id="classificacao" formControlName="classificacao">
         <option value="1">1</option>
         <option value="2">2</option>
         <option value="3">3</option>
         <option value="4">4</option>
         <option value="5">5</option>
       </select>
+      <div *ngIf="classificacao.invalid && formDir.submitted" class="validation-error">
+        <p *ngIf="classificacao.errors?.['required']">A classificação é obrigatória.</p>
+        <p *ngIf="classificacao.errors?.['min']">A classificação deve ser no mínimo 1.</p>
+        <p *ngIf="classificacao.errors?.['max']">A classificação deve ser no máximo 5.</p>
+      </div>
     </div>
-  
+
     <div class="form-group">
-      <label for="resenha">Resenha:</label>
-      <textarea id="resenha" name="resenha" placeholder="Insira uma resenha de livro" required></textarea>
+      <label for="resenha">resenha:</label>
+      <textarea
+        formControlName="resenha"
+        placeholder="O que conta o livro?"
+      ></textarea>
+      <div
+        *ngIf="resenha.invalid && formDir.submitted"
+        class="validation-error"
+      >
+        <p *ngIf="resenha.errors?.['required']">A resenha é obrigatória.</p>
+      </div>
     </div>
-    <input type="submit" value="{{ btnText}}">
+
+    <input type="submit" value="{{ btnText }}" />
   </form>
-  

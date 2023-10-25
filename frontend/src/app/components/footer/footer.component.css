@@ -1,17 +1,16 @@
 footer {
-    border-top: 1px solid #777;
+    border-top: 1px solid purple;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    height: 200px;
-}
-
-footer h3 {
+  }
+  
+  footer h3 {
     margin-bottom: 1.2em;
-}
-
-footer span {
+  }
+  
+  footer span {
     font-weight: bold;
     color: purple;
-}
+  }
