@@ -3,5 +3,6 @@ export interface Livro {
     titulo: string,
     autor: string,
     classificacao: number,
-    resenha: string
+    resenha: string,
+    data_adicao: string; 
 }

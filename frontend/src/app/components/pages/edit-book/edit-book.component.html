@@ -1,0 +1,7 @@
+<div *ngIf="book">
+    <h2>
+      Editando o momento <span>{{ book.titulo }}</span
+      >!
+    </h2>
+    <app-books-form (onSubmit)="editHandler($event)" [bookData]="book" [btnText]="btnText"></app-books-form>
+  </div>

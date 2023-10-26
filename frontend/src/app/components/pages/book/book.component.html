@@ -1,0 +1,16 @@
+<div class="book" *ngIf="book">
+    <h1>{{ book.titulo }}</h1>
+    <div class="about-book">
+        <h3>Sobre este Livro:</h3>
+        <p>{{ book.autor }}</p>
+        <p>{{ book.classificacao }}</p>
+        <p>{{ book.resenha }}</p>
+        <p>{{ book.data_adicao }}</p>
+    </div>
+    <div class="actions">
+      <h3>Ações:</h3>
+      <a routerLink="/livros/edit/{{ book.id }}" class="edit-btn">Editar</a>
+      <button class="remove-btn" (click)="removeHandler(book.id!)"> Excluir</button>
+    </div>
+
+  </div>

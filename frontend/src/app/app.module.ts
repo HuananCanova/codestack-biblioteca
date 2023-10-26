@@ -13,6 +13,8 @@ import { HomeComponent } from './components/pages/home/home.component';
 import { AboutComponent } from './components/pages/about/about.component';
 import { BooksFormComponent } from './components/books-form/books-form.component';
 import { NewBookComponent } from './components/pages/new-book/new-book.component';
+import { BookComponent } from './components/pages/book/book.component';
+import { EditBookComponent } from './components/pages/edit-book/edit-book.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +24,9 @@ import { NewBookComponent } from './components/pages/new-book/new-book.component
     HomeComponent,
     AboutComponent,
     BooksFormComponent,
-    NewBookComponent
+    NewBookComponent,
+    BookComponent,
+    EditBookComponent
   ],
   imports: [
     BrowserModule,

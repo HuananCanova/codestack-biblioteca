@@ -1,0 +1,55 @@
+.book {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    width: 60%;
+    margin: 0 auto;
+  }
+  
+  .book h1 {
+    margin-bottom: 1em;
+  }
+  
+  .about-book {
+    padding: 1.2em;
+    border-bottom: 1px solid #ccc;
+    margin-bottom: 1em;
+  }
+  
+  .actions {
+    padding: 1.2em;
+    margin-bottom: 1em;
+  }
+  
+  .actions h3 {
+    margin-bottom: 1em;
+  }
+  
+  .actions .edit-btn {
+    display: inline-block;
+    background-color: #007BFF;
+    color: #fff;
+    padding: 0.5em 1em;
+    border: none;
+    cursor: pointer;
+    text-decoration: none;
+    margin-right: 10px;
+  }
+  
+  .actions .remove-btn {
+    display: inline-block;
+    background-color: #DC3545;
+    color: #fff;
+    padding: 0.5em 1em;
+    border: none;
+    cursor: pointer;
+    text-decoration: none;
+  }
+  
+  .about-book h3 {
+    margin-bottom: 1em;
+  }
+  
+  /* Additional styles for other elements in your HTML */
+  

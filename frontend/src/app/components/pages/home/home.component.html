@@ -1,1 +1,16 @@
-<p>home works!</p>
+<div class="home-container">
+    <div *ngIf="books.length > 0; else noBooks">
+        <div class="books-container">
+            <div class="book" *ngFor="let book of books">
+                <h2>{{ book.titulo}}</h2>
+                <h3>{{ book.autor}}</h3>
+                <p><a routerLink="livros/{{book.id}}">Detalhes</a></p>
+                
+            </div>
+        </div>
+    </div>
+    <ng-template #noBooks>
+        <h1>Nenhum livro na biblioteca</h1>
+    </ng-template>
+    
+</div>
